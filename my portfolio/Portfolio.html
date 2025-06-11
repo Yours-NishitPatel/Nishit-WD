@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            background-image: linear-gradient(to right bottom, #a7c5d6, #5a788d, #3c4e59, #2f2a2a);
+            color: #eaeaea;
+        }
+
+        /* Header Styles */
+header {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: #fff;
+    z-index: 100;
+    padding: 10px 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.9); /* Darker on scroll */
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding-bottom: 5px;
+}
+
+.nav-links a:hover {
+    color: #ffad5c;
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+.nav-links a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #ffad5c;
+    transition: width 0.3s ease;
+    bottom: -5px;
+    left: 0;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger Icon (For Mobile) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 250px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.mobile-menu a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    color: #ffad5c;
+}
+
+/* Show hamburger menu and mobile menu when screen is small */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+    .mobile-menu.active {
+        display: flex;
+    }
+}
+
+/* Transition Effect for Navigation Bar */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 60px 20px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-out;
+           
+            background-color: #1f2427;
+          
+        }
+
+        .portfolio h2 {
+            font-size: 3em;
+            margin-bottom: 40px;
+            color: #ffd700;
+            background-color: #333;
+            padding: 20px 0;
+            width: fit-content;
+            margin: auto;
+            border-radius: 10px;
+            animation: slideInFromLeft 1s ease-out;
+        }
+
+        /* Project Gallery Layout */
+        .project-gallery {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            animation: fadeInUp 2s ease-out;
+            margin-top: 50px;
+        }
+
+        /* Project Card Styling */
+        .project {
+            background-color: #282c34;
+            border-radius: 8px;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+            margin-bottom: 30px;
+        }
+
+        .project img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .project h3 {
+            font-size: 2em;
+            margin-top: 15px;
+            color: #ff6f61;
+            font-weight: bold;
+        }
+
+        .project p {
+            font-size: 1.1em;
+            color: #e1e1e1;
+            line-height: 1.5;
+        }
+
+        /* Hover Effects for Projects */
+        .project:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .project:hover img {
+            transform: scale(1.1);
+        }
+
+        a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="Screenshot 2025-03-07 184324.png" alt="Nishit's Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Portfolio.html">Projects</a></li>
+                <li><a href="contect.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="portfolio" class="portfolio">
+        <h2>My Work</h2>
+        <div class="project-gallery">
+            <div class="project">
+                <img src="https://wallpapers.com/images/featured/4k-nature-ztbad1qj8vdjqe0p.jpg" alt="Nature Project">
+                <h3>Exploring Nature</h3>
+                <li><a href="project-1.html">Learn about Nature</a></li>
+                <p>Discover the beauty of nature through its diverse ecosystems and the way natural phenomena interact across our planet.</p>
+            </div>
+            <div class="project">
+                <img src="https://media.assettype.com/esakal%2Fimport%2Fs3fs-public%2Fnews-story%2Fcover-images%2F2ram_20mandir_203d.jpg" alt="Ram Mandir Project">
+                <h3>Visit to Ram Mandir</h3>
+                <li><a href="projects-2.html">Learn about Ram Mandir</a></li>
+                <p>The Ram Mandir consecration ceremony was a monumental event, involving the distribution of sacred materials and invitations across India to millions.</p>
+            </div>
+            
+        </div>
+    </section>
+
+     <!-- Footer Section -->
+     <footer>
+        <div class="container">
+            <p>&copy; 2025 Nishit Patel. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

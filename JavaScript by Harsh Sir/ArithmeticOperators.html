@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operators</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            justify-items: center;
+        }
+        .box{
+            border: 2px solid black;
+            background-color: chartreuse;
+            height: 350px;
+            width: 350px;
+            margin-top: 160px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <center><h1>Calculator of Arithmetic Operators</h1><center>
+        <br>
+        <p id="demo"></p>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+        <p id="demo5"></p>
+    </div>
+
+
+
+    <script>        
+    //Addition
+     let x = 100 + 50;
+        document.getElementById("demo").innerHTML = "total of : 100 + 50 = " + x;
+    
+    //Subtraction    
+    let y = 100 - 50;
+        document.getElementById("demo1").innerHTML = "total of : 100 - 50 = " + y;
+
+    //Multiplication    
+    let x2 = 100 * 50;
+        document.getElementById("demo2").innerHTML = "total of : 100 * 50 = " + x2;   
+
+    //Exponentiation 
+    let z = 100 ** 5
+        document.getElementById("demo3").innerHTML = "total of : 100 ** 5 = " + z;
+
+    //Division
+    let a = 100 / 50
+        document.getElementById("demo4").innerHTML = "total of 100 / 5 = " + a;
+        
+    //Modulus
+    let b = 100 % 3
+        document.getElementById("demo5").innerHTML = "total of 100 % 3 = " + b;   
+    </script>
+</body>
+</html>

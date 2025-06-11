@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishit's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="Screenshot 2025-03-07 184324.png" alt="Nishit's Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Portfolio.html">Projects</a></li>
+                <li><a href="contect.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="intro">
+            <h1>Hello, I'm <span>Nishit Patel</span></h1>
+            <p>I am a <span>Full Stack Developer</span></p>
+            <a href="#portfolio" class="cta-button">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm a passionate Full Stack Developer specializing in HTML, CSS, JavaScript, and C++. With a strong foundation in both front-end and back-end development, I create efficient and user-friendly web applications.</p>
+            <p>I'm constantly learning and staying updated with the latest technologies to deliver modern solutions. Feel free to explore my work or get in touch for collaborations!</p>
+
+            <div class="skills">
+                <div class="skill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/800px-CSS3_logo.svg.png" alt="CSS Logo">
+                    <h4>CSS</h4>
+                </div>
+                <div class="skill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/640px-JavaScript-logo.png" alt="JavaScript Logo">
+                    <h4>JavaScript</h4>
+                </div>
+                <div class="skill">
+                    <img src="data:image/png;base64,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" alt="HTML Logo">
+                    <h4>HTML</h4>
+                </div>
+                <div class="skill">
+                    <img src="data:image/png;base64,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" alt="C++ Logo">
+                    <h4>C++</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>My Projects</h2>
+           <center> <div class="project-card">
+                <img src="https://wallpapers.com/images/featured/4k-nature-ztbad1qj8vdjqe0p.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>Project 1</h3>
+                    
+                    <a href="project-1.html" class="project-link">View Project</a>
+                </div>
+            </div><center>
+            <div class="project-card">
+                <img src="https://media.assettype.com/esakal%2Fimport%2Fs3fs-public%2Fnews-story%2Fcover-images%2F2ram_20mandir_203d.jpg" alt="Project 2">
+                <div class="project-info">
+                    <h3>Project 2</h3>
+                    
+                    <a href="projects-2.html" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="box">
+            <h2>Contact Me</h2>
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nishit Patel. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
