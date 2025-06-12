@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if-else in JS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+           
+        }
+
+        .container {
+            width: 300px;
+            height: 170px;
+            margin: auto;
+            margin-top: 150px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+        
+            
+        }
+
+        .container:hover {
+            transition: 1s ease;;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            transform: scale(1.05);
+            
+
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #demo {
+            font-size: 20px;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <h2>JavaScript if .. else</h2>
+
+    <div class="container">
+        <p>Age</p>
+        <label>Enter your Age: </label>
+        <input type="number" id="ageInput">
+        <button type="submit" onclick="checkAge()">Submit</button>
+        <p id="demo"></p>
+    </div>
+
+    <script>
+        function checkAge() {
+            let age = document.getElementById("ageInput").value;
+            let output;
+
+            if (age < 12) {
+                output = "You are a kid.";
+            } else if (age >= 12 && age <= 19) {
+                output = "You are a teenager.";
+            } else if (age > 19 && age <= 50) {
+                output = "You are an adult.";
+            } else {
+                output = "You are old.";
+            }
+
+            let result = document.getElementById("demo");
+            result.innerHTML = output;
+            result.style.opacity = 1; // Fade-in effect
+        }
+    </script>
+</body>
+
+</html>
