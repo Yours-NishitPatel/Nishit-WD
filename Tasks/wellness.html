@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grounded - Plant Shop, Cafe, & Wellness Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgba(242, 228, 203, 0.833);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        button {
+            background: rgba(255, 255, 255, 0.3);
+            border: 3px solid black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .frount {
+            height: 80vh;
+            width: 100%;
+            background-image: url('exam.25.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: azure;
+            text-align: center;
+        }
+
+        .card {
+            background: rgba(34, 34, 34, 0.767);
+            border: 5px solid rgb(32, 32, 32);
+            backdrop-filter: blur(1px);
+            border-radius: 15px;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: #fff;
+        }
+
+        .card h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .con {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .con img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border: 2px solid black;
+        }
+
+        .con-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .signup {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .book {
+            background-color: green;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products-grid h1 {
+            grid-column: 1 / -1;
+            background-color: black;
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+            border: 2px solid white;
+        }
+
+        .product-item img {
+            width: 100%;
+            height: auto;
+            border: 2px solid black;
+        }
+
+        .product-item p {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+
+        .viewall {
+            display: block;
+            margin: 2rem auto;
+            background-color: green;
+        }
+
+        .intro-1 {
+            position: relative;
+            text-align: center;
+        }
+
+        .cafe {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: cover;
+        }
+
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .studio, .since, .hello {
+            text-align: center;
+            padding: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .studio {
+            font-size: 2rem;
+        }
+
+        .since, .hello {
+            font-size: 1.5rem;
+        }
+
+        .dot {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .LM {
+            display: block;
+            margin: 2rem auto;
+            background-color: green;
+        }
+
+        .articles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .article-item {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .article-item img {
+            width: 100%;
+            height: auto;
+            border: 2px solid black;
+        }
+
+        .article-item h3 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .article-item h5 {
+            color: grey;
+            margin-bottom: 1rem;
+        }
+
+        .va {
+            display: block;
+            margin: 2rem auto;
+            background-color: green;
+            width: 200px;
+        }
+
+        .end {
+            position: relative;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .end-1 {
+            width: 100%;
+            height: auto;
+            max-height: 850px;
+            object-fit: cover;
+        }
+
+        .end-2 {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            color: black;
+            font-size: 3rem;
+            text-align: left;
+        }
+
+        .end-3 {
+            position: absolute;
+            top: 30%;
+            left: 5%;
+            color: white;
+            font-size: 1.5rem;
+            background: rgba(43, 41, 41, 0.659);
+            backdrop-filter: blur(2px);
+            border-radius: 15px;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 8px 16px black;
+        }
+
+        .thx {
+            background-color: green;
+            color: white;
+            border-radius: 10px;
+            width: 300px;
+            margin: 2rem auto;
+            display: block;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .card h1 {
+                font-size: 1.5rem;
+            }
+
+            .card h3 {
+                font-size: 1rem;
+            }
+
+            .signup {
+                font-size: 1.8rem;
+            }
+
+            .intro {
+                font-size: 1.2rem;
+            }
+
+            .text {
+                font-size: 1.5rem;
+            }
+
+            .studio {
+                font-size: 1.5rem;
+            }
+
+            .since, .hello {
+                font-size: 1.2rem;
+            }
+
+            .end-2 {
+                font-size: 2rem;
+            }
+
+            .end-3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .frount {
+                height: 60vh;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .card h1 {
+                font-size: 1.2rem;
+            }
+
+            .card h3 {
+                font-size: 0.9rem;
+            }
+
+            .signup {
+                font-size: 1.5rem;
+            }
+
+            .intro {
+                font-size: 1rem;
+            }
+
+            .text {
+                font-size: 1.2rem;
+            }
+
+            .end-2 {
+                font-size: 1.5rem;
+            }
+
+            .end-3 {
+                font-size: 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="frount">
+        <div class="card">
+            <h1>Discover Grounded: Where Plant Care Meets Self-Care</h1>
+            <h3>Step into a space where nature, community, and wellness come together. Visit our store to explore lush plants, sip on specialty beverages, and recharge in our biophilic-inspired café and wellness studio. Grounded is more than a shop—it's an experience designed to nurture your mind, body, and spirit.</h3>
+            <h3>Come see what makes Grounded your go-to destination for connection and growth!</h3>
+            <button onclick="window.location.href='https://feelgrounded.com/pages/grounded-store'">Learn More</button>
+        </div>
+    </div>
+
+    <div class="con">
+        <img src="https://feelgrounded.com/cdn/shop/files/IMG_4386-2730.jpg?v=1733174580&width=750" alt="Grounded Wellness">
+        <div class="con-text">
+            <p class="signup">Sign Up For Grounded Wellness Classes</p>
+            <p class="intro">Welcome to Grounded, a biophilic wellness studio where nature and self-care intertwine. Nestled within our third space café and plant shop, our studio is a sanctuary designed to rejuvenate your mind, body, and spirit.</p>
+            <button class="book" onclick="window.location.href='https://feelgrounded.com/pages/wellness'">BOOK A SESSION</button>
+        </div>
+    </div>
+
+    <div class="products-grid">
+        <h1>New Arrivals</h1>
+        <div class="product-item">
+            <img src="https://feelgrounded.com/cdn/shop/files/ProductShots_4.png?v=1707342717&width=375" alt="Matte Black Planter">
+            <p class="price-1">Matte Black Planter</p>
+            <p class="price-01">$22.00 - $32.00</p>
+        </div>
+        <div class="product-item">
+            <img src="https://feelgrounded.com/cdn/shop/files/ProductShots_7.png?v=1707343179&width=375" alt="Matte White Planter">
+            <p class="price-2">Matte White Planter</p>
+            <p class="price-02">$22.00 - $32.00</p>
+        </div>
+        <div class="product-item">
+            <img src="https://feelgrounded.com/cdn/shop/files/21.png?v=1707340712&width=375" alt="Cylinder Black Self-Watering Planter">
+            <p class="price-3">Cylinder Black Self-Watering Planter</p>
+            <p class="price-03">$28.00 - $32.00</p>
+        </div>
+        <div class="product-item">
+            <img src="https://feelgrounded.com/cdn/shop/files/ProductShots_2_copy2.png?v=1707341999&width=375" alt="Herati Planter">
+            <p class="price-4">Herati Planter</p>
+            <p class="price-04">$28.00</p>
+        </div>
+    </div>
+
+    <div class="products-grid">
+        <h1>Floor Plants</h1>
+        <div class="product-item">
+            <img src="https://feelgrounded.com/cdn/shop/files/14.png?v=1707334599&width=375" alt="10-in Birds of Paradise">
+            <p class="price-001">10-in Birds of Paradise</p>
+            <p class="price-0001">$22.00 - $32.00</p>
+        </div>
+        <div class="product-item">
+            <img src="https://feelgrounded.com/cdn/shop/files/12.png?v=1707334753&width=375" alt="10-in Sansevieria Zeylanica">
+            <p class="price-002">10-in Sansevieria Zeylanica</p>
+            <p class="price-0002">$60.00</p>
+        </div>
+        <div class="product-item">
+            <img src="https://feelgrounded.com/cdn/shop/files/15.png?v=1707334641&width=375" alt="10-in Fiddle Leaf Fig Tree">
+            <p class="price-003">10-in Fiddle Leaf Fig Tree</p>
+            <p class="price-0003">$85.00</p>
+        </div>
+        <div class="product-item">
+            <img src="https://feelgrounded.com/cdn/shop/products/IMG_4386-1024.jpg?v=1663201658&width=375" alt="8-in Dracaena Marginata">
+            <p class="price-004">8-in Dracaena Marginata</p>
+            <p class="price-0004">$60.00</p>
+        </div>
+    </div>
+
+    <button class="viewall" onclick="window.location.href='https://feelgrounded.com/collections/floor-plants'">VIEW ALL</button>
+
+    <div class="intro-1">
+        <img class="cafe" src="https://feelgrounded.com/cdn/shop/files/043820D6-33C8-41E1-A588-4A3EAADA2181_1_105_c_02d5865a-fd93-482c-8059-f55b8d084c8e.jpg?v=1714510922" alt="Grounded Cafe">
+        <h2 class="text">Introducing Grounded: Plant Shop, Cafe, & Wellness Studio</h2>
+    </div>
+
+    <h1 class="studio">Introducing Grounded: Plant Shop, Cafe, & Wellness Studio</h1>
+    <p class="since">Since 2020, we’ve nurtured your well-being with our diverse range of healthful green companions from afar, and now, we’re thrilled to announce the grand opening of our very first brick-and-mortar in Southeast, DC - Fall 2024!</p>
+    <p class="dot">•</p>
+    <p class="hello">As a unique destination that seamlessly integrates a plant shop, cafe, and wellness studio, we are dedicated to fostering a deep connection with the natural world through the principles of biophilic design. We cannot wait to open our doors to you!</p>
+    <button class="LM" onclick="window.location.href='https://feelgrounded.com/pages/grounded-store'">Learn More</button>
+
+    <div class="articles">
+        <div class="article-item">
+            <img class="plants" src="https://feelgrounded.com/cdn/shop/articles/IMG_4386-2526.jpg?v=1720725023&width=750" alt="Plant Care">
+            <h3 class="planting">Nourish Your Plants, Nourish Yourself: The Metaphor of Watering for Self-Care</h3>
+            <h5>July 11, 2024</h5>
+        </div>
+        <div class="article-item">
+            <img class="yoga-1" src="https://feelgrounded.com/cdn/shop/articles/IMG_4386-2323.jpg?v=1719334341&width=750" alt="Wellness">
+            <h3 class="info-yoga">Embracing Wellness: Growing in Our Own Nature Like Plants</h3>
+            <h5 class="date">June 25, 2024</h5>
+        </div>
+    </div>
+
+    <button class="va" onclick="window.location.href='https://feelgrounded.com/blogs/resources'">View All</button>
+
+    <div class="end">
+        <img class="end-1" src="end.jpg" alt="Hike Club">
+        <h1 class="end-2">Join Our Hike Club</h1>
+        <p class="end-3">Driving our mission of reconnecting our community to nature we host monthly hiking meet-ups, bouldering, yoga and more to take a step back from technology and be immersed in greenery.</p>
+        <button class="thx" onclick="window.location.href='https://feelgrounded.com/pages/community'">STAY UP TO DATE WITH OUR EVENTS</button>
+    </div>
+</body>
+</html>
