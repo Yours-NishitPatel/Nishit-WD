@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While Loop Example</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        #demo {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            line-height: 1.6;
+            font-size: 1.2em;
+            color: #333;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #demo:hover {
+            transform: translateY(-5px);
+        }
+
+        #demo br {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            #demo {
+                font-size: 1em;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>While Loop Example</h1>
+    <p id="demo"></p>
+
+    <script>
+        let text = "";
+        let i = 0;
+        while (i < 10) {
+            text += "<br>The number is " + i;
+            i++;
+        }
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+</html>

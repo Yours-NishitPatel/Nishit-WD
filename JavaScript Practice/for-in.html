@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Loops Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f9f9f9;
+        }
+
+        .section {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .section h2 {
+            margin-top: 0;
+        }
+
+        .output {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="section">
+        <h2>1. for…in (object properties)</h2>
+        <div id="out1" class="output"></div>
+    </div>
+
+    <div class="section">
+        <h2>2. for…of (array items)</h2>
+        <div id="out2" class="output"></div>
+    </div>
+
+    <div class="section">
+        <h2>3. for…of (string characters)</h2>
+        <div id="out3" class="output"></div>
+    </div>
+
+    <div class="section">g</h2>
+        <h2>4. for…in vs for…of (array comparison)</h2>
+        <div id="out4" class="output"></div>
+    </div>
+
+    <div class="section">
+        <h2>5. Exercise: count vowels in a strin
+        <div id="out5" class="output"></div>
+    </div>
+
+    <script>
+        // 1.
+        const car = { brand: "Toyota", model: "Camry", year: 2020 };
+        let t = "Car properties:\n";
+        for (let key in car) {
+            t += `${key}: ${car[key]}\n`;
+        }
+        document.getElementById("out1").innerText = t;
+
+        // 2.
+        const cars = ["Ferrari", "Lamborghini", "Porsche"];
+        t = "Cars list:\n";
+        for (let c of cars) t += c + "\n";
+        document.getElementById("out2").innerText = t;
+
+        // 3.
+        const brand = "Bugatti";
+        t = "Brand letters:\n";
+        for (let ch of brand) t += ch + "\n";
+        document.getElementById("out3").innerText = t;
+
+        // 4.
+        const models = ["Mustang", "Aventador", "911"];
+
+        let byIndex = "for...in (indices):\n";
+        for (let idx in models) byIndex += `Index ${idx}: ${models[idx]}\n`;
+
+        let byValue = "for...of (values):\n";
+        for (let m of models) byValue += `Value: ${m}\n`;
+        
+        
+
+        document.getElementById("out4").innerText = byIndex + "\n" + byValue;
+
+        // 5.
+        const input = "Hello World";
+        const vowels = ["a", "e", "i", "o", "u"];
+        let count = 0;
+        for (let ch of input.toLowerCase()) {
+            if (vowels.includes(ch)) count++;
+        }
+        document.getElementById("out5").innerText =
+            `Input: "${input}"\nVowel count: ${count}`;
+    </script>
+
+</body>
+
+</html>
